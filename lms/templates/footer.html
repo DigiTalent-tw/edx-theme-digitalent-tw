@@ -1,0 +1,50 @@
+## mako
+<%!
+  from django.core.urlresolvers import reverse
+  from django.utils.translation import ugettext as _
+  from branding.api import get_footer
+%>
+<% footer = get_footer(is_secure=is_secure) %>
+<%namespace name='static' file='static_content.html'/>
+
+<div class="wrapper wrapper-footer">
+  <footer id="footer-openedx">
+
+    <div class="colophon">
+      <nav class="nav-colophon">
+        <ol>
+          <li><a href="http://www.digitalent.org.tw/聯絡我們/" target="_blank">聯絡我們</a></li>
+        </ol>
+      </nav>
+
+      <div class="wrapper-logo">
+        <p>
+          <a href="/dashboard">
+            <img alt="DigiTalent Logo" src="${static.url('images/logo.png')}">
+          </a>
+        </p>
+      </div>
+      <p class="copyright">本網站為經濟部工業局委辦，著作權為其所有，非經同意，不得為任何形式之利用</p>
+      <p class="copyright">© 2017-2020 跨域數位人才加速躍升計畫辦公室 網頁系統營運及維護: 如有任何問題或建議，請洽網站維護人員</p>
+      <nav class="nav-legal">
+        <ul>
+          <li class="nav-legal-01">
+            <a href="http://www.digitalent.org.tw/隱私權政策/">隱私權保護與資訊安全政策</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div style="text-align: center;">
+      <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fdigiplustalent%2F&tabs&width=340&height=214&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=871146829598893" width="340" height="214" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+    </div>
+
+    <div class="powered-by">
+      <p>
+        <a href="http://openedx.org/">
+          <img src="https://files.edx.org/openedx-logos/edx-openedx-logo-tag-light.png" alt="Powered by Open edX" width="150" height="50" />
+        </a>
+      </p>
+    </div>
+  </footer>
+</div>
